@@ -4,10 +4,10 @@
 # INFO #
 Folder System made for AP Computer Science.  
 Contents:  
->DEVLEOPMENT/INFO.txt
->EXPERIMENTAL/INFO.txt
->USELESS/INFO.txt
->USELESS/DTurtle.py
+>DEVLEOPMENT/INFO.txt  
+>EXPERIMENTAL/INFO.txt  
+>USELESS/INFO.txt  
+>USELESS/DTurtle.py  
 
 
 File Finding: Ease of Access  

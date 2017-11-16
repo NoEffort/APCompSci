@@ -4,7 +4,7 @@
 # INFO #
 Folder System made for AP Computer Science.  
 Contents:  
-  NO OTHER SYSTEMS
+>NO OTHER SYSTEMS
 
 
 File Finding: Ease of Access  

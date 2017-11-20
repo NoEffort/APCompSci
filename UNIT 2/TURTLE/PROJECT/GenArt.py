@@ -1,4 +1,5 @@
 import turtle
+import random
 
 t = turtle.Turtle()
 win = turtle.Screen()
@@ -6,6 +7,11 @@ win = turtle.Screen()
 
 def pause():
     win.exitonclick()
+    return
+
+
+def end():
+    win.bye()
     return
 
 
@@ -30,24 +36,39 @@ def angle(degree):
     return
 
 
-def color(red, green, blue):
+def color(*args):
     t.hideturtle()
     t.screen.colormode(255)
 
-    if red | green | blue > 255:
-        return ValueError("Colors cannot exceed 255")
-    else:
-        t.pencolor(red, green, blue)
-    return
+    if args is int():
+        return t.color(args[0], args[1], args[2])
+    if args[0] is True:
+        if int(args[1]) > 255 | int(args[1]) < 0:
+            return ValueError("Value must be in range of 0, 255")
+        else:
+            red = random.randint(0, int(args[1]))
+            green = random.randint(0, int(args[1]))
+            blue = random.randint(0, int(args[1]))
+
+            t.color(red, green, blue)
+            return
+
+    if args[0] is False:
+        try:
+            end()
+        except ConnectionError:
+            print("Window cannot be closed")
+        return print("Please manually define your colors based upon the RGB scale. Usage: color(RED, GREEN, BLUE)")
 
 
 def repeater(iterations):
     return int(iterations)
 
+
 length = 5
-for i in range(repeater(100)):
-    color(70, 175, 154)
+for i in range(repeater(99)):
+    color(32, 67, 98)
     move(length)
-    angle(240)
+    angle(123)
     length = length + 5
 pause()

@@ -7,7 +7,8 @@ Contents:
 >DEVLEOPMENT/INFO.txt  
 >EXPERIMENTAL/INFO.txt  
 >USELESS/INFO.txt  
->USELESS/DTurtle.py  
+>USELESS/DTurtle.py
+>PROJECT/GenArt.py  
 
 
 File Finding: Ease of Access  

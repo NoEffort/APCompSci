@@ -10,11 +10,6 @@ def pause():
     return
 
 
-def end():
-    win.bye()
-    return
-
-
 def move(distance):
     t.hideturtle()
     t.forward(distance)
@@ -36,39 +31,33 @@ def angle(degree):
     return
 
 
-def color(*args):
+def color(boolean, *args):
     t.hideturtle()
     t.screen.colormode(255)
 
-    if args is int():
+    if args:
         return t.color(args[0], args[1], args[2])
-    if args[0] is True:
-        if int(args[1]) > 255 | int(args[1]) < 0:
-            return ValueError("Value must be in range of 0, 255")
-        else:
-            red = random.randint(0, int(args[1]))
-            green = random.randint(0, int(args[1]))
-            blue = random.randint(0, int(args[1]))
+    if boolean is True:
+        red = random.randint(0, 255)
+        green = random.randint(0, 255)
+        blue = random.randint(0, 255)
 
-            t.color(red, green, blue)
-            return
+        t.color(red, green, blue)
+        return
 
-    if args[0] is False:
-        try:
-            end()
-        except ConnectionError:
-            print("Window cannot be closed")
-        return print("Please manually define your colors based upon the RGB scale. Usage: color(RED, GREEN, BLUE)")
+    if boolean is False:
+        return t.color('black')
 
 
 def repeater(iterations):
     return int(iterations)
 
 
-length = 5
-for i in range(repeater(99)):
-    color(32, 67, 98)
-    move(length)
-    angle(123)
-    length = length + 5
-pause()
+def run(iterations, length):
+    while repeater(iterations) > 0:
+        color(False)
+        move(length)
+        angle(123)
+        length = length + 5
+
+run(100, 5)

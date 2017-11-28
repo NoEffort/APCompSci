@@ -12,7 +12,9 @@ def pause():
 
 def move(distance):
     t.hideturtle()
-    t.forward(distance)
+    while int(distance / 10) > 0:
+        t.forward(distance)
+        distance = distance - distance
     return
 
 
@@ -46,18 +48,28 @@ def color(boolean, *args):
         return
 
     if boolean is False:
-        return t.color('black')
+        return t.color("black")
 
 
 def repeater(iterations):
     return int(iterations)
 
 
-def run(iterations, length):
+def run(iterations, length, time):
     while repeater(iterations) > 0:
         color(False)
         move(length)
         angle(123)
         length = length + 5
+        iterations = iterations - 1
+        for i in range(0, time):
+            color(True)
+            move(length)
+            angle(123)
+            length = length + 4
+            iterations = iterations - 1
+            time = time - 1
+    pause()
 
-run(100, 5)
+
+run(100, 5, 50)
